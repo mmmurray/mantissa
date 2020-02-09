@@ -1,2 +1,3 @@
-# mantissa
+# Mantissa
+
 Mathematical functions.

@@ -1,0 +1,38 @@
+{
+  "name": "mantissa",
+  "version": "0.0.0",
+  "description": "Mathematical functions.",
+  "author": "Mark Murray",
+  "license": "MIT",
+  "repository": "git@github.com:mmmurray/mantissa.git",
+  "keywords": [
+    "math",
+    "maths",
+    "vector",
+    "vectors",
+    "matrix",
+    "matrices",
+    "functions",
+    "functional",
+    "utility",
+    "library",
+    "typescript"
+  ],
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "mmm build",
+    "dev": "mmm dev",
+    "format": "mmm format",
+    "jest": "mmm jest",
+    "release": "mmm release",
+    "test": "mmm test",
+    "test:compile": "mmm test:compile",
+    "test:coverage": "mmm test:coverage",
+    "test:lint": "mmm test:lint"
+  },
+  "devDependencies": {
+    "@types/jest": "24.9.1",
+    "mmm-scripts": "1.1.0"
+  }
+}
