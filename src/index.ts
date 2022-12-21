@@ -1,1 +1,11 @@
-export { clamp } from './functions/clamp';
+export * from './bounds';
+export * from './constants';
+export * from './mat2';
+export * from './mat3';
+export * from './mat4';
+export * from './range';
+export * from './scalar';
+export * from './types';
+export * from './vec2';
+export * from './vec3';
+export * from './vec4';
