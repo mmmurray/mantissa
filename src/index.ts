@@ -1,1 +1,1 @@
-export { clamp } from './functions/clamp'
+export { clamp } from './functions/clamp';
