@@ -1,5 +1,5 @@
-import { almostEqual } from './scalar';
-import { Mat3, Vec2, Vec3 } from './types';
+import { almostEqual } from "./scalar";
+import { Mat3, Vec2, Vec3 } from "./types";
 
 export const mat3 = (
   m00 = 0,
@@ -10,7 +10,7 @@ export const mat3 = (
   m12 = 0,
   m20 = 0,
   m21 = 0,
-  m22 = 0,
+  m22 = 0
 ): Mat3 => [m00, m01, m02, m10, m11, m12, m20, m21, m22];
 
 export const mat3Clone = (m: Mat3): Mat3 => {
@@ -57,7 +57,7 @@ export const mat3Invert = (m: Mat3): Mat3 | null => {
     (m02 * m10 - m12 * m00) / d,
     (m21 * m10 - m11 * m20) / d,
     (m01 * m20 - m21 * m00) / d,
-    (m11 * m00 - m01 * m10) / d,
+    (m11 * m00 - m01 * m10) / d
   );
 };
 
@@ -71,7 +71,7 @@ export const mat3Add = (m1: Mat3, m2: Mat3): Mat3 => {
     m1[5] + m2[5],
     m1[6] + m2[6],
     m1[7] + m2[7],
-    m1[8] + m2[8],
+    m1[8] + m2[8]
   );
 };
 
@@ -85,7 +85,7 @@ export const mat3Sub = (m1: Mat3, m2: Mat3): Mat3 => {
     m1[5] - m2[5],
     m1[6] - m2[6],
     m1[7] - m2[7],
-    m1[8] - m2[8],
+    m1[8] - m2[8]
   );
 };
 
@@ -102,7 +102,7 @@ const mat3Mult2 = (a: Mat3, b: Mat3): Mat3 => {
     a02 * b10 + a12 * b11 + a22 * b12,
     a00 * b20 + a10 * b21 + a20 * b22,
     a01 * b20 + a11 * b21 + a21 * b22,
-    a02 * b20 + a12 * b21 + a22 * b22,
+    a02 * b20 + a12 * b21 + a22 * b22
   );
 };
 
@@ -120,10 +120,10 @@ export const mat3Mult = (...ms: Mat3[]): Mat3 => {
 
 export const mat3Scale = (
   scale: number | Vec2 | Vec3,
-  m: Mat3 = mat3Identity(),
+  m: Mat3 = mat3Identity()
 ): Mat3 => {
   const [sx, sy, sz] =
-    typeof scale === 'number'
+    typeof scale === "number"
       ? [scale, scale, scale]
       : scale.length === 2
       ? [scale[0], scale[1], 1]
@@ -138,7 +138,7 @@ export const mat3Scale = (
     m[5] * sy,
     m[6] * sz,
     m[7] * sz,
-    m[8] * sz,
+    m[8] * sz
   );
 };
 
@@ -174,7 +174,7 @@ export const mat3Translation = ([x, y]: Vec2): Mat3 => {
 
 export const mat3Scaling = (scale: number | Vec2 | Vec3): Mat3 => {
   const [sx, sy, sz] =
-    typeof scale === 'number'
+    typeof scale === "number"
       ? [scale, scale, scale]
       : scale.length === 2
       ? [scale[0], scale[1], 1]

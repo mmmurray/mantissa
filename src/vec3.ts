@@ -1,6 +1,6 @@
-import { EPSILON_SQUARED } from './constants';
-import { clamp } from './scalar';
-import { Mat3, Vec3 } from './types';
+import { EPSILON_SQUARED } from "./constants";
+import { clamp } from "./scalar";
+import { Mat3, Vec3 } from "./types";
 
 export const vec3 = (x = 0, y = 0, z = 0): Vec3 => [x, y, z];
 
@@ -55,20 +55,20 @@ export const vec3Round = (v: Vec3): Vec3 => {
 export const vec3Clamp = (
   v: Vec3,
   min: Vec3 = vec3(),
-  max: Vec3 = vec3Unit(),
+  max: Vec3 = vec3Unit()
 ): Vec3 => {
   return vec3(
     clamp(v[0], min[0], max[0]),
     clamp(v[1], min[1], max[1]),
-    clamp(v[2], min[2], max[2]),
+    clamp(v[2], min[2], max[2])
   );
 };
 
 export const vec3Scale = (
   scale: number | Vec3,
-  v: Vec3 = vec3Identity(),
+  v: Vec3 = vec3Identity()
 ): Vec3 => {
-  if (typeof scale === 'number') {
+  if (typeof scale === "number") {
     return vec3(v[0] * scale, v[1] * scale, v[2] * scale);
   }
 
@@ -95,7 +95,7 @@ export const vec3Min = (v1: Vec3, v2: Vec3): Vec3 => {
   return vec3(
     Math.min(v1[0], v2[0]),
     Math.min(v1[1], v2[1]),
-    Math.min(v1[2], v2[2]),
+    Math.min(v1[2], v2[2])
   );
 };
 
@@ -103,7 +103,7 @@ export const vec3Max = (v1: Vec3, v2: Vec3): Vec3 => {
   return vec3(
     Math.max(v1[0], v2[0]),
     Math.max(v1[1], v2[1]),
-    Math.max(v1[2], v2[2]),
+    Math.max(v1[2], v2[2])
   );
 };
 
@@ -141,6 +141,6 @@ export const vec3Transform = (v: Vec3, m: Mat3): Vec3 => {
   return vec3(
     m00 * x + m10 * y + m20 * z,
     m01 * x + m11 * y + m21 * z,
-    m02 * x + m12 * y + m22 * z,
+    m02 * x + m12 * y + m22 * z
   );
 };

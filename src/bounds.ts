@@ -1,11 +1,11 @@
-import { mat3Mult, mat3Rotation, mat3Translation } from './mat3';
+import { mat3Mult, mat3Rotation, mat3Translation } from "./mat3";
 import {
   rangeCreate,
   rangesCombine,
   rangeSmallest,
   rangesOverlap,
-} from './range';
-import { Bounds, Vec2 } from './types';
+} from "./range";
+import { Bounds, Vec2 } from "./types";
 import {
   vec2,
   vec2Add,
@@ -19,12 +19,12 @@ import {
   vec2Transform3,
   vec2Unit,
   vec2Zero,
-} from './vec2';
+} from "./vec2";
 
 export const boundsCreate = (
   size: Vec2 = vec2(),
   position: Vec2 = vec2(),
-  rotation: number = 0,
+  rotation: number = 0
 ): Bounds => ({
   size,
   position,
@@ -52,21 +52,21 @@ export const boundsPerimeter = ({ size }: Bounds): number =>
 
 export const boundsTranslate = (
   translation: Vec2,
-  { position, size, rotation }: Bounds,
+  { position, size, rotation }: Bounds
 ): Bounds => {
   return boundsCreate(size, vec2Add(position, translation), rotation);
 };
 
 export const boundsScale = (
   scale: number | Vec2,
-  { position, size, rotation }: Bounds,
+  { position, size, rotation }: Bounds
 ): Bounds => {
   return boundsCreate(vec2Scale(scale, size), position, rotation);
 };
 
 export const boundsRotate = (
   rotate: number,
-  { position, size, rotation }: Bounds,
+  { position, size, rotation }: Bounds
 ): Bounds => {
   return boundsCreate(size, position, rotation + rotate);
 };
@@ -110,7 +110,7 @@ export const boundsIntersectingBounds = (b1: Bounds, b2: Bounds): boolean => {
 
 export const boundsContainsPoint = (
   { position, size }: Bounds,
-  point: Vec2,
+  point: Vec2
 ): boolean =>
   point[0] > position[0] &&
   point[0] < position[0] + size[0] &&
@@ -145,7 +145,7 @@ export const boundsCorners = ({
   const transform = mat3Mult(
     mat3Translation(center),
     mat3Rotation(rotation),
-    mat3Translation(vec2Scale(-1, center)),
+    mat3Translation(vec2Scale(-1, center))
   );
 
   return [

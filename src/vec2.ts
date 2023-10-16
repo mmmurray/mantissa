@@ -1,7 +1,7 @@
-import { EPSILON_SQUARED } from './constants';
-import { clamp } from './scalar';
-import { Mat2, Mat3, Vec2 } from './types';
-import { vec3, vec3Transform } from './vec3';
+import { EPSILON_SQUARED } from "./constants";
+import { clamp } from "./scalar";
+import { Mat2, Mat3, Vec2 } from "./types";
+import { vec3, vec3Transform } from "./vec3";
 
 export const vec2 = (x = 0, y = 0): Vec2 => [x, y];
 
@@ -54,16 +54,16 @@ export const vec2Round = (v: Vec2): Vec2 => {
 export const vec2Clamp = (
   v: Vec2,
   min: Vec2 = vec2(),
-  max: Vec2 = vec2Unit(),
+  max: Vec2 = vec2Unit()
 ): Vec2 => {
   return vec2(clamp(v[0], min[0], max[0]), clamp(v[1], min[1], max[1]));
 };
 
 export const vec2Scale = (
   scale: number | Vec2,
-  v: Vec2 = vec2Identity(),
+  v: Vec2 = vec2Identity()
 ): Vec2 => {
-  if (typeof scale === 'number') {
+  if (typeof scale === "number") {
     return vec2(v[0] * scale, v[1] * scale);
   }
 
