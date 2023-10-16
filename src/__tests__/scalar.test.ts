@@ -1,6 +1,6 @@
-import { almostEqual, clamp, lerp, mod, round } from '..';
+import { almostEqual, clamp, lerp, mod, round } from "..";
 
-test('mod', () => {
+test("mod", () => {
   expect(mod(-6, 3)).toEqual(0);
   expect(mod(-5, 3)).toEqual(1);
   expect(mod(-4, 3)).toEqual(2);
@@ -16,7 +16,7 @@ test('mod', () => {
   expect(mod(6, 3)).toEqual(0);
 });
 
-test('lerp', () => {
+test("lerp", () => {
   expect(lerp(0, 0, 0)).toEqual(0);
   expect(lerp(0, 1, 0.5)).toEqual(0.5);
   expect(lerp(0, 10, 0.5)).toEqual(5);
@@ -24,14 +24,14 @@ test('lerp', () => {
   expect(lerp(7, 2, 0.4)).toEqual(5);
 });
 
-test('almostEqual', () => {
+test("almostEqual", () => {
   expect(almostEqual(0, 0)).toEqual(true);
   expect(almostEqual(1, 1)).toEqual(true);
   expect(almostEqual(1, 1 + 1e-10)).toEqual(true);
   expect(almostEqual(1, 1 + 1e-7)).toEqual(false);
 });
 
-test('clamp', () => {
+test("clamp", () => {
   expect(clamp(0)).toEqual(0);
   expect(clamp(0.5)).toEqual(0.5);
   expect(clamp(1)).toEqual(1);
@@ -45,7 +45,7 @@ test('clamp', () => {
   expect(clamp(7, 2, 6)).toEqual(6);
 });
 
-test('round', () => {
+test("round", () => {
   expect(round(-1)).toEqual(-1);
   expect(round(-0.9999)).toEqual(-1);
   expect(round(-0.5001)).toEqual(-1);

@@ -1,4 +1,4 @@
-import { Range } from './types';
+import { Range } from "./types";
 
 export const rangeCreate = (min: number = 0, max: number = min): Range => {
   return { min, max };

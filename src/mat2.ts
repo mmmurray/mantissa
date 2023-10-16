@@ -1,5 +1,5 @@
-import { almostEqual } from './scalar';
-import { Mat2 } from './types';
+import { almostEqual } from "./scalar";
+import { Mat2 } from "./types";
 
 export const mat2 = (m00 = 0, m01 = 0, m10 = 0, m11 = 0): Mat2 => [
   m00,
@@ -53,7 +53,7 @@ const mat2Mult2 = (a: Mat2, b: Mat2): Mat2 => {
     a00 * b00 + a10 * b01,
     a01 * b00 + a11 * b01,
     a00 * b10 + a10 * b11,
-    a01 * b10 + a11 * b11,
+    a01 * b10 + a11 * b11
   );
 };
 
@@ -81,7 +81,7 @@ export const mat2Rotate = (angle: number, m: Mat2 = mat2Identity()): Mat2 => {
     m[0] * c + m[2] * s,
     m[1] * c + m[3] * s,
     m[2] * c - m[0] * s,
-    m[3] * c - m[1] * s,
+    m[3] * c - m[1] * s
   );
 };
 

@@ -1,9 +1,9 @@
 {
   "name": "mantissa",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Mathematical functions.",
   "author": "Mark Murray",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "repository": "git@github.com:mmmurray/mantissa.git",
   "keywords": [
     "math",

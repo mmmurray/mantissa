@@ -1,6 +1,6 @@
-import { EPSILON_SQUARED } from './constants';
-import { clamp } from './scalar';
-import { Vec4 } from './types';
+import { EPSILON_SQUARED } from "./constants";
+import { clamp } from "./scalar";
+import { Vec4 } from "./types";
 
 export const vec4 = (x = 0, y = 0, z = 0, w = 0): Vec4 => [x, y, z, w];
 
@@ -45,7 +45,7 @@ export const vec4Floor = (v: Vec4): Vec4 => {
     Math.floor(v[0]),
     Math.floor(v[1]),
     Math.floor(v[2]),
-    Math.floor(v[3]),
+    Math.floor(v[3])
   );
 };
 
@@ -54,7 +54,7 @@ export const vec4Ceil = (v: Vec4): Vec4 => {
     Math.ceil(v[0]),
     Math.ceil(v[1]),
     Math.ceil(v[2]),
-    Math.ceil(v[3]),
+    Math.ceil(v[3])
   );
 };
 
@@ -63,28 +63,28 @@ export const vec4Round = (v: Vec4): Vec4 => {
     Math.round(v[0]),
     Math.round(v[1]),
     Math.round(v[2]),
-    Math.round(v[3]),
+    Math.round(v[3])
   );
 };
 
 export const vec4Clamp = (
   v: Vec4,
   min: Vec4 = vec4(),
-  max: Vec4 = vec4Unit(),
+  max: Vec4 = vec4Unit()
 ): Vec4 => {
   return vec4(
     clamp(v[0], min[0], max[0]),
     clamp(v[1], min[1], max[1]),
     clamp(v[2], min[2], max[2]),
-    clamp(v[3], min[3], max[3]),
+    clamp(v[3], min[3], max[3])
   );
 };
 
 export const vec4Scale = (
   scale: number | Vec4,
-  v: Vec4 = vec4Identity(),
+  v: Vec4 = vec4Identity()
 ): Vec4 => {
-  if (typeof scale === 'number') {
+  if (typeof scale === "number") {
     return vec4(v[0] * scale, v[1] * scale, v[2] * scale, v[3] * scale);
   }
 
@@ -92,7 +92,7 @@ export const vec4Scale = (
     v[0] * scale[0],
     v[1] * scale[1],
     v[2] * scale[2],
-    v[3] * scale[3],
+    v[3] * scale[3]
   );
 };
 
@@ -117,7 +117,7 @@ export const vec4Min = (v1: Vec4, v2: Vec4): Vec4 => {
     Math.min(v1[0], v2[0]),
     Math.min(v1[1], v2[1]),
     Math.min(v1[2], v2[2]),
-    Math.min(v1[3], v2[3]),
+    Math.min(v1[3], v2[3])
   );
 };
 
@@ -126,13 +126,13 @@ export const vec4Max = (v1: Vec4, v2: Vec4): Vec4 => {
     Math.max(v1[0], v2[0]),
     Math.max(v1[1], v2[1]),
     Math.max(v1[2], v2[2]),
-    Math.max(v1[3], v2[3]),
+    Math.max(v1[3], v2[3])
   );
 };
 
 export const vec4Dot = (
   [x1, y1, z1, w1]: Vec4,
-  [x2, y2, z2, w2]: Vec4,
+  [x2, y2, z2, w2]: Vec4
 ): number => x1 * x2 + y1 * y2 + z1 * z2 + w1 * w2;
 
 export const vec4Angle = (v1: Vec4, v2: Vec4): number =>
@@ -151,7 +151,7 @@ export const vec4ManhattanDistance = (v1: Vec4, v2: Vec4): number => {
 
 export const vec4Equal = (
   [x1, y1, z1, w1]: Vec4,
-  [x2, y2, z2, w2]: Vec4,
+  [x2, y2, z2, w2]: Vec4
 ): boolean => x1 === x2 && y1 === y2 && z1 === z2 && w1 === w2;
 
 export const vec4AlmostEqual = (v1: Vec4, v2: Vec4): boolean =>

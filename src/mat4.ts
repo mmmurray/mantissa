@@ -1,5 +1,5 @@
-import { almostEqual } from './scalar';
-import { Mat4 } from './types';
+import { almostEqual } from "./scalar";
+import { Mat4 } from "./types";
 
 export const mat4 = (
   m00 = 0,
@@ -17,7 +17,7 @@ export const mat4 = (
   m30 = 0,
   m31 = 0,
   m32 = 0,
-  m33 = 0,
+  m33 = 0
 ): Mat4 => [
   m00,
   m01,
@@ -54,7 +54,7 @@ export const mat4Clone = (m: Mat4): Mat4 => {
     m[12],
     m[13],
     m[14],
-    m[15],
+    m[15]
   );
 };
 
@@ -128,7 +128,7 @@ export const mat4Transpose = (m: Mat4): Mat4 => {
     m03,
     m13,
     m23,
-    m33,
+    m33
   );
 };
 
@@ -188,7 +188,7 @@ export const mat4Invert = (m: Mat4): Mat4 | null => {
     (m11 * d07 - m10 * d09 - m12 * d06) / d,
     (m00 * d09 - m01 * d07 + m02 * d06) / d,
     (m31 * d01 - m30 * d03 - m32 * d00) / d,
-    (m20 * d03 - m21 * d01 + m22 * d00) / d,
+    (m20 * d03 - m21 * d01 + m22 * d00) / d
   );
 };
 
@@ -209,7 +209,7 @@ export const mat4Add = (m1: Mat4, m2: Mat4): Mat4 => {
     m1[12] + m2[12],
     m1[13] + m2[13],
     m1[14] + m2[14],
-    m1[15] + m2[15],
+    m1[15] + m2[15]
   );
 };
 
@@ -230,7 +230,7 @@ export const mat4Sub = (m1: Mat4, m2: Mat4): Mat4 => {
     m1[12] - m2[12],
     m1[13] - m2[13],
     m1[14] - m2[14],
-    m1[15] - m2[15],
+    m1[15] - m2[15]
   );
 };
 
@@ -288,7 +288,7 @@ const mat4Mult2 = (a: Mat4, b: Mat4): Mat4 => {
     a00 * b30 + a10 * b31 + a20 * b32 + a30 * b33,
     a01 * b30 + a11 * b31 + a21 * b32 + a31 * b33,
     a02 * b30 + a12 * b31 + a22 * b32 + a32 * b33,
-    a03 * b30 + a13 * b31 + a23 * b32 + a33 * b33,
+    a03 * b30 + a13 * b31 + a23 * b32 + a33 * b33
   );
 };
 
@@ -321,7 +321,7 @@ export const mat4Scale = (scale: number, m: Mat4 = mat4Identity()): Mat4 => {
     m[12] * scale,
     m[13] * scale,
     m[14] * scale,
-    m[15] * scale,
+    m[15] * scale
   );
 };
 
